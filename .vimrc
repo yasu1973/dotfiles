@@ -1,3 +1,48 @@
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" start for for deni.vim settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if &compatible
+    set nocompatible " Be iMproved
+endif
+
+" Required:
+set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('~/.vim/dein'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+    call dein#install()
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" end for deni.vim settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"
+" vim一般設定
+"
+
 " ファイルの上書きの前にバックアップを作る/作らない
 " set writebackupを指定してもオプション 'backup' がオンでない限り、
 " バックアップは上書きに成功した後に削除される。
@@ -12,32 +57,38 @@
 
 " クリップボードを共有
 set clipboard+=unnamed
+
 " 8進数を無効にする。<C-a>,<C-x>に影響する
 set nrformats-=octal
-" キーコードやマッピングされたキー列が完了するのを待つ時間(ミリ秒)
-set timeout timeoutlen=3000 ttimeoutlen=100
+
 " 編集結果非保存のバッファから、新しいバッファを開くときに警告を出さない
-set hidden
+"set hidden
+
 " ヒストリの保存数
 set history=50
+
 " 日本語の行の連結時には空白を入力しない
 set formatoptions+=mM
+
 " Visual blockモードでフリーカーソルを有効にする
 set virtualedit=block
+
 " カーソルキーで行末／行頭の移動可能に設定
 set whichwrap=b,s,h,l,[,],<,>
+
 " バックスペースでインデントや改行を削除できるようにする
 set backspace=indent,eol,start
+
 " □や○の文字があってもカーソル位置がずれないようにする
 set ambiwidth=double
+
 " コマンドライン補完するときに強化されたものを使う
 set wildmenu
+
 " マウスを有効にする
 if has('mouse')
   set mouse=a
 endif
-" pluginを使用可能にする
-filetype plugin indent on
 
 "----------------------------------------
 " 検索
@@ -46,10 +97,13 @@ filetype plugin indent on
 " ただし大文字小文字の両方が含まれている場合は大文字小文字を区別する
 set ignorecase
 set smartcase
+
 " 検索時にファイルの最後まで行ったら最初に戻る
 set wrapscan
+
 " インクリメンタルサーチ
 set incsearch
+
 " 検索文字の強調表示
 set hlsearch
 " w,bの移動で認識する文字
@@ -74,42 +128,57 @@ set shortmess+=I
 " set lazyredraw
 " Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
 set shellslash
+
 " 行番号表示
 set number
 if version >= 703
   " 相対行番号表示(7.3)
-  " set relativenumber
+  "set relativenumber
 endif
+
 " 括弧の対応表示時間
 set showmatch matchtime=1
+
 " タブを設定
 " set ts=4 sw=4 sts=4
+
 " 自動的にインデントする
 set autoindent
+
 " Cインデントの設定
 set cinoptions+=:0
+
 " タイトルを表示
 set title
+
 " コマンドラインの高さ (gvimはgvimrcで指定)
 set cmdheight=2
+
 " ステータスラインを常に表示
 set laststatus=2
+
 " ステータスラインに文字コードと改行文字を表示する
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+
 " コマンドをステータス行に表示
 set showcmd
+
 " 画面最後の行をできる限り表示する
 set display=lastline
+
 " Tab、行末の半角スペースを明示的に表示する
-set list
-set listchars=tab:>\ ,extends:<,trail:~
+"set list
+"set listchars=tab:>\ ,extends:<,trail:~
 
 " タブの代わりに空白文字を挿入する
 set expandtab
+
 " 新しい行を作ったときに高度な自動インデントを行う
-set smartindent
+"set smartindent
+
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする。
 set smarttab
+
 " ファイル内の <Tab> が対応する空白の数
 set tabstop=4
 
@@ -174,8 +243,10 @@ endif
 
 " 現バッファの差分表示(変更箇所の表示)
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
 " ファイルまたはバッファ番号を指定して差分表示。#なら裏バッファと比較
 command! -nargs=? -complete=file Diff if '<args>'=='' | browse vertical diffsplit|else| vertical diffsplit <args>|endif
+
 " パッチコマンド
 set patchexpr=MyPatch()
 function! MyPatch()
@@ -187,9 +258,12 @@ endfunction
 "----------------------------------------
 " ヘルプ検索
 nnoremap <F1> K
+
 " 現在開いているvimスクリプトファイルを実行
 nnoremap <F8> :source %<CR>
+
 " 強制全保存終了を無効化
+
 nnoremap ZZ <Nop>
 " カーソルをj k では表示行で移動する。物理行移動は<C-n>,<C-p>
 " キーボードマクロには物理行移動を推奨
@@ -222,7 +296,10 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-n> <Down>
 inoremap <C-p> <UP>
-
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
 
 "----------------------------------------
 " ビジュアルモード
@@ -362,11 +439,14 @@ set softtabstop=0
 " ルーラーの表示
 set ruler
 
-" 入力切り替えをCtrl+jに変更＆挿入モードに戻ったときに前回の入力方式を記憶
-inoremap <silent> <ESC> <ESC>
-inoremap <silent> <C-[> <ESC>
-inoremap <silent> <C-j> <C-^><C-r>=IMState('FixMode')<CR>
-
 " 更新されたファイルの自動読み込み
 set autoread
+
+" insert modeでカーソルキーが使えない問題の対処。以下参照。
+" :help vt100-cursor-keys
+" :help xterm-cursor-keys
+set notimeout
+set ttimeout
+set timeoutlen=3000
+
 

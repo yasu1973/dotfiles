@@ -47,6 +47,10 @@ dotfileリポジトリを取り込む。
     $ git commit -m 'edit files'
     $ git push origin master
 
+追加したファイルがない場合は以下でもよい。
+
+    $ git commit -a -m "edit files"
+    $ git push origin master
 
 
 
