@@ -24,6 +24,11 @@ call dein#add('Shougo/neosnippet-snippets')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
+call dein#add('Shougo/unite.vim')
+call dein#add('ujihisa/unite-colorscheme', {'depends' : 'Shougo/unite.vim'})
+
+
+
 " Required:
 call dein#end()
 
