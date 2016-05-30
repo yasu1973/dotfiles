@@ -1,48 +1,69 @@
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" start for for deni.vim settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 if &compatible
-    set nocompatible " Be iMproved
+  set nocompatible               " Be iMproved
 endif
 
 " Required:
-set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/dotfiles/.vim/bundle/neobundle.vim/
 
 " Required:
-call dein#begin(expand('~/.vim/dein'))
+call neobundle#begin(expand('~/dotfiles/.vim/bundle'))
 
-" Let dein manage dein
+" Let NeoBundle manage NeoBundle
 " Required:
-call dein#add('Shougo/dein.vim')
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Add or remove your plugins here:
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
+" Add or remove your Bundles here:
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'flazz/vim-colorschemes'
+
+" ファイルをtree表示してくれる
+NeoBundle 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1
+
+" markdown preview
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'kannokanno/previm'
+
+"
+" colorscheme
+"
+" solarized
+NeoBundle 'altercation/vim-colors-solarized'
+" mustang
+NeoBundle 'croaker/mustang-vim'
+" jellybeans
+NeoBundle 'nanotech/jellybeans.vim'
+" molokai
+NeoBundle 'tomasr/molokai'
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
 
 " You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-call dein#add('Shougo/unite.vim')
-call dein#add('ujihisa/unite-colorscheme', {'depends' : 'Shougo/unite.vim'})
-
-
+NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " Required:
-call dein#end()
+call neobundle#end()
 
 " Required:
 filetype plugin indent on
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-    call dein#install()
-endif
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" end for deni.vim settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Solarized Dark
+syntax enable
+set t_Co=256
+let g:solarized_termcolors=256
+set background="dark"
+colorscheme solarized
+"let g:molokai_original = 1
+"let g:rehash256 = 1
 
 "
 " vim一般設定
@@ -326,100 +347,6 @@ augroup vimrcEx
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line('$') | exe "normal! g`\"" | endif
 augroup END
 
-""""""""""""""""""""""""""""""
-" 挿入モード時、ステータスラインのカラー変更
-""""""""""""""""""""""""""""""
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-
-if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
-endif
-" if has('unix') && !has('gui_running')
-"   " ESCですぐに反映されない対策
-"   inoremap <silent> <ESC> <ESC>
-" endif
-
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-    redraw
-  endif
-endfunction
-
-function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
-endfunction
-
-""""""""""""""""""""""""""""""
-" 全角スペースを表示
-""""""""""""""""""""""""""""""
-" コメント以外で全角スペースを指定しているので、scriptencodingと、
-" このファイルのエンコードが一致するよう注意！
-" 強調表示されない場合、ここでscriptencodingを指定するとうまくいく事があります。
-" scriptencoding cp932
-"function! ZenkakuSpace()
-"  silent! let hi = s:GetHighlight('ZenkakuSpace')
-"  if hi =~ 'E411' || hi =~ 'cleared$'
-"    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
-"  endif
-"endfunction
-"if has('syntax')
-" augroup ZenkakuSpace
-"    autocmd!
-"    autocmd ColorScheme       * call ZenkakuSpace()
-"    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-"  augroup END
-"  call ZenkakuSpace()
-"endif
-
-""""""""""""""""""""""""""""""
-" grep,tagsのためカレントディレクトリをファイルと同じディレクトリに移動する
-""""""""""""""""""""""""""""""
-" if exists('+autochdir')
-"   "autochdirがある場合カレントディレクトリを移動
-"   set autochdir
-" else
-"   "autochdirが存在しないが、カレントディレクトリを移動したい場合
-"   au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
-" endif
-
-""""""""""""""""""""""""""""""
-"Windowsで内部エンコーディングがcp932以外の場合
-"makeのメッセージが化けるのを回避
-""""""""""""""""""""""""""""""
-"if has('win32') || has('win64') || has('win95') || has('win16')
-"  au QuickfixCmdPost make call QFixCnv('cp932')
-"endif
-"
-"function! QFixCnv(enc)
-"  if a:enc == &enc
-"    return
-"  endif
-"  let qflist = getqflist()
-"  for i in qflist
-"    let i.text = iconv(i.text, a:enc, &enc)
-"  endfor
-"  call setqflist(qflist)
-"endfunction
-
-"----------------------------------------
-" 各種プラグイン設定
-"----------------------------------------
-
 "----------------------------------------
 " 一時設定
 "----------------------------------------
@@ -447,11 +374,17 @@ set ruler
 " 更新されたファイルの自動読み込み
 set autoread
 
-" insert modeでカーソルキーが使えない問題の対処。以下参照。
+" insert modeでカーソルキーが使えない問題の対処。以下参照。　
 " :help vt100-cursor-keys
 " :help xterm-cursor-keys
 set notimeout
 set ttimeout
 set timeoutlen=3000
+
+" カーソル行の強調
+set cursorline
+
+" 自動コメント入力オプションんOFF
+autocmd FileType * setlocal formatoptions-=ro
 
 
