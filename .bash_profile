@@ -10,3 +10,8 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+eval $(gdircolors ~/.dircolors-solarized)
+
+# use gls
+alias ls='gls --color=auto -FG'
+
