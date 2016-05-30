@@ -46,6 +46,10 @@ NeoBundle 'ujihisa/unite-colorscheme'
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
+" Simplenote
+NeoBundle 'mrtazz/simplenote.vim'
+source ~/.simplenoterc
+
 " Required:
 call neobundle#end()
 
