@@ -24,8 +24,9 @@ NeoBundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 
 " markdown preview
-NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 "
 " colorscheme
@@ -66,16 +67,17 @@ set t_Co=256
 let g:solarized_termcolors=256
 set background="dark"
 colorscheme solarized
+"colorscheme desert256
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 
-" NERDTree setting
-" 隠しファイルをデフォルトで表示させる
-let NERDTreeShowHidden = 1 
-" デフォルトでツリーを表示させる
-"autocmd VimEnter * execute 'NERDTree'
+"let g:vim_markdown_initial_foldlevel=1
 
-
+" markdownファイル、Simplenoteのファイルをブラウザでプレビューできるように。
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*},{SN_*} set filetype=markdown
+augroup END
 "
 " vim一般設定
 "
