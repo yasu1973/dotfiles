@@ -69,6 +69,13 @@ colorscheme solarized
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 
+" NERDTree setting
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1 
+" デフォルトでツリーを表示させる
+"autocmd VimEnter * execute 'NERDTree'
+
+
 "
 " vim一般設定
 "
