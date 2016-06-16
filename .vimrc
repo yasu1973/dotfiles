@@ -66,9 +66,17 @@ set t_Co=256
 let g:solarized_termcolors=256
 set background="dark"
 colorscheme solarized
+"colorscheme desert256
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 
+"let g:vim_markdown_initial_foldlevel=1
+
+" markdownファイル、Simplenoteのファイルをブラウザでプレビューできるように。
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*},{SN_*} set filetype=markdown
+augroup END
 "
 " vim一般設定
 "
