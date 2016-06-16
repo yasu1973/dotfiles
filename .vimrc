@@ -24,8 +24,9 @@ NeoBundle 'scrooloose/nerdtree'
 let NERDTreeShowHidden=1
 
 " markdown preview
-NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 "
 " colorscheme
