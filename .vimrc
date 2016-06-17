@@ -78,6 +78,7 @@ augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*},{SN_*} set filetype=markdown
 augroup END
+
 "
 " vim一般設定
 "
@@ -88,8 +89,8 @@ augroup END
 "set nowritebackup
 
 " バックアップ/スワップファイルを作成する/しない
-"set nobackup
-"set noswapfile
+set nobackup
+set noswapfile
 
 " viminfoを作成しない
 "set viminfo=
@@ -397,7 +398,7 @@ set timeoutlen=3000
 " カーソル行の強調
 set cursorline
 
-" 自動コメント入力オプションんOFF
+" 自動コメント入力オプションOFF
 autocmd FileType * setlocal formatoptions-=ro
 
 
