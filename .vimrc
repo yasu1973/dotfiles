@@ -80,6 +80,10 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*},{SN_*} set filetype=markdown
 augroup END
 
+" markdownの折りたたみなし
+let g:vim_markdown_folding_disabled=1
+
+
 "
 " vim一般設定
 "
@@ -405,3 +409,4 @@ autocmd FileType * setlocal formatoptions-=ro
 " undoファイルをアクティブ、一箇所のディレクトリにまとめる
 set undodir=~/.vim/undo/
 
+" 
