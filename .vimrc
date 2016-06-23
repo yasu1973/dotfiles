@@ -402,4 +402,6 @@ set cursorline
 " 自動コメント入力オプションOFF
 autocmd FileType * setlocal formatoptions-=ro
 
+" undoファイルをアクティブ、一箇所のディレクトリにまとめる
+set undodir=~/.vim/undo/
 
