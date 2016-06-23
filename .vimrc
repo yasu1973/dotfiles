@@ -64,10 +64,11 @@ NeoBundleCheck
 " Solarized Dark
 syntax enable
 set t_Co=256
-let g:solarized_termcolors=256
-set background="dark"
-colorscheme solarized
+"let g:solarized_termcolors=256
+"set background="dark"
+"colorscheme solarized
 "colorscheme desert256
+colorscheme desert
 "let g:molokai_original = 1
 "let g:rehash256 = 1
 
