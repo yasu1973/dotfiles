@@ -78,6 +78,9 @@ colorscheme desert
 augroup PrevimSettings
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*},{SN_*} set filetype=markdown
+    let g:previm_show_header = 0
+    let g:previm_disable_default_css = 0
+    let g:previm_custom_css_path = '~/dotfiles/markdown/github_plus.css'
 augroup END
 
 " markdownの折りたたみなし
