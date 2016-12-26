@@ -15,3 +15,6 @@ eval $(gdircolors ~/.dircolors-solarized)
 # use gls
 alias ls='gls --color=auto -FG'
 
+# macvim
+alias macvim="open -a MacVim"
+
