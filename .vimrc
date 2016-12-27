@@ -48,8 +48,8 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 " Simplenote
-NeoBundle 'mrtazz/simplenote.vim'
-source ~/.simplenoterc
+"NeoBundle 'mrtazz/simplenote.vim'
+"source ~/.simplenoterc
 
 " Required:
 call neobundle#end()
