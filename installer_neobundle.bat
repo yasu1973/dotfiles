@@ -1,10 +1,12 @@
 rem @echo off
 
-rem bundleƒfƒBƒŒƒNƒgƒŠ‚Ì¶¬
-mkdir %userprofile%\.vim\bundle
+rem bundleãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ç”Ÿæˆ
+echo "test"
+mkdir %userprofile%\dotfiles\.vim\
+mkdir %userprofile%\dotfiles\.vim\bundle\
 
-rem bundleƒfƒBƒŒƒNƒgƒŠ‚ÖˆÚ“®
-cd %userprofile%\.vim\bundle
+rem bundleãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã¸ç§»å‹•
+cd %userprofile%\dotfiles\.vim\bundle\
 
-rem bundle‚ğgit‚ÅƒCƒ“ƒXƒg[ƒ‹
+rem bundleã‚’gitã§ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 git clone git://github.com/Shougo/neobundle.vim
