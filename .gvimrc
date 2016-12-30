@@ -2,7 +2,7 @@
 set lines=38        " typical
 set columns=172      " margin for 'number' and 'foldcolumn'
 set cmdheight=2     " MacVim $VIM/gvimrc overwrites my .vimrc settings
-set guioptions=c    " show no GUI components
+"set guioptions=c    " show no GUI components
 
 " no way to use a mouse
 "set mouse=
@@ -14,6 +14,10 @@ if has('win32')
     " When VL Gothic isn't found in the system, use MS Gothic.
     set guifont=VL_Gothic:h12:cSHIFTJIS,MS_Gothic:h12:cSHIFTJIS
     set linespace=0
+    " メニューの文字化け対策
+    source $VIMRUNTIME/delmenu.vim
+    set langmenu=ja_jp.utf-8
+    source $VIMRUNTIME/menu.vim
 elseif has('mac')
 "    set guifont=VL_Gothic:h16
 "    set linespace=0
@@ -27,4 +31,6 @@ endif
 " colorscheme
 colorscheme desert256
 "colorscheme solarized
+
+
 
