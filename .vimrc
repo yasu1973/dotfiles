@@ -51,6 +51,21 @@ NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 "NeoBundle 'mrtazz/simplenote.vim'
 "source ~/.simplenoterc
 
+" lightline.vim
+" Vimの画面の一番下にあるステータスラインの表示内容が強化
+NeoBundle 'itchyny/lightline.vim'
+
+" vim-indent-guides
+" インデントに色をつけてくれる
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
+" 各行の行末に不要に入ってしまったスペースを色つけて表示
+NeoBundle 'bronson/vim-trailing-whitespace'
+
+" surround 置換
+NeoBundle 'tpope/vim-surround'
+
+
 " Required:
 call neobundle#end()
 
@@ -68,9 +83,10 @@ set t_Co=256
 "set background="dark"
 "colorscheme solarized
 "colorscheme desert256
-colorscheme desert
-"let g:molokai_original = 1
-"let g:rehash256 = 1
+"colorscheme desert
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 "let g:vim_markdown_initial_foldlevel=1
 
@@ -86,8 +102,20 @@ augroup END
 " markdownの折りたたみなし
 let g:vim_markdown_folding_disabled=1
 
-
 "
+" vim-indent-guides
+"
+" vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup = 1
+" ガイドの幅
+let g:indent_guides_guide_size = 1
+" 奇数番目のインデントの色
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
+" 偶数番目のインデントの色
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray"
+
+
+
 " vim一般設定
 "
 
