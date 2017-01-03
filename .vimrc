@@ -65,6 +65,9 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " surround 置換
 NeoBundle 'tpope/vim-surround'
 
+" コメントの拡張
+NeoBundle 'tomtom/tcomment_vim'
+
 
 " Required:
 call neobundle#end()
