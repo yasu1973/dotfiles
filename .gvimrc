@@ -1,5 +1,6 @@
 " display & information
 set lines=38        " typical
+set linespace=1
 set columns=172      " margin for 'number' and 'foldcolumn'
 set cmdheight=2     " MacVim $VIM/gvimrc overwrites my .vimrc settings
 "set guioptions=c    " show no GUI components
@@ -16,14 +17,14 @@ if has('win32')
 
     " font設定。Consolasを使用
     set guifont=Consolas:h10,Lucida_Console:h10:w5 guifontwide=MS_Gothic:h10:cSHIFTJIS
-    set linespace=0
+
     " メニューの文字化け対策
     source $VIMRUNTIME/delmenu.vim
     set langmenu=ja_jp.utf-8
     source $VIMRUNTIME/menu.vim
+
 elseif has('mac')
 "    set guifont=VL_Gothic:h16
-"    set linespace=0
 endif
 
 " turn off disabling IM at entering input mode
