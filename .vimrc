@@ -2,7 +2,9 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-let g:vimproc#download_windows_dll = 1
+" vimprocのWindows用DLLダウンロード機能をActiveに
+" vimprocが呼ばれる前にActiveにする必要あり。
+let g:vimproc#download_windows_dll=1
 
 " Required:
 set runtimepath^=~/dotfiles/.vim/bundle/neobundle.vim/
