@@ -145,9 +145,8 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 " .ファイルも表示できるように
-call unite#custom#source('buffer', 'matchers', "matcher_default")
-call unite#custom#source('file', 'matchers', "matcher_default")
-call unite#custom#source('file_mru', 'matchers', "matcher_default")
+call unite#custom#source('buffer,file,file_mru', 'matchers', "matcher_default")
+
 """"""""""""""""""""""""""""""
 
 
