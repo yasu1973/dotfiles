@@ -390,12 +390,12 @@ endif
 "inoremap ' ''<LEFT>
 
 " 移動
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-inoremap <C-n> <Down>
-inoremap <C-p> <UP>
+"inoremap <C-a> <Home>
+"inoremap <C-e> <End>
+"inoremap <C-b> <Left>
+"inoremap <C-f> <Right>
+"inoremap <C-n> <Down>
+"inoremap <C-p> <UP>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-j> <Down>
