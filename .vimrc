@@ -44,9 +44,6 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
 " Simplenote
 "NeoBundle 'mrtazz/simplenote.vim'
 "source ~/.simplenoterc
@@ -73,6 +70,24 @@ NeoBundle 'Shougo/neocomplete.vim'
 
 " git連携
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+
+" filer
+NeoBundle 'Shougo/vimfiler'
+
+NeoBundle 'Shougo/vimproc.vim', {
+    \ 'build' : {
+    \     'windows' : 'tools\\update-dll-mingw',
+    \     'cygwin' : 'make -f make_cygwin.mak',
+    \     'mac' : 'make',
+    \     'linux' : 'make',
+    \     'unix' : 'gmake',
+    \    },
+    \ }
+NeoBundle 'Shougo/vimshell.vim'
+" You can specify revision/branch/tag.
+"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
 
 " Required:
 call neobundle#end()
