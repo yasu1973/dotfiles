@@ -2,6 +2,8 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
+let g:vimproc#download_windows_dll = 1
+
 " Required:
 set runtimepath^=~/dotfiles/.vim/bundle/neobundle.vim/
 
