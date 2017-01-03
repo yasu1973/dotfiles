@@ -12,7 +12,8 @@ set cmdheight=2     " MacVim $VIM/gvimrc overwrites my .vimrc settings
 " font
 if has('win32')
     " When VL Gothic isn't found in the system, use MS Gothic.
-    set guifont=VL_Gothic:h10:cSHIFTJIS,MS_Gothic:h10:cSHIFTJIS
+    "set guifont=VL_Gothic:h10:cSHIFTJIS,MS_Gothic:h10:cSHIFTJIS
+    set guifont=Consolas:h10,Lucida_Console:h10:w5 guifontwide=MS_Gothic:h10
     set linespace=0
     " メニューの文字化け対策
     source $VIMRUNTIME/delmenu.vim
