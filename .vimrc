@@ -71,6 +71,8 @@ NeoBundle 'tomtom/tcomment_vim'
 " 補完
 NeoBundle 'Shougo/neocomplete.vim'
 
+" git連携
+NeoBundle 'tpope/vim-fugitive'
 
 " Required:
 call neobundle#end()
