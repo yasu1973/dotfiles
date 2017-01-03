@@ -109,12 +109,12 @@ NeoBundleCheck
 syntax enable
 set t_Co=256
 "let g:solarized_termcolors=256
-"set background="dark"
 "colorscheme solarized
 "colorscheme desert256
 "colorscheme desert
+syntax on
 colorscheme molokai
-let g:molokai_original = 1
+"let g:molokai_original = 1
 let g:rehash256 = 1
 
 "let g:vim_markdown_initial_foldlevel=1
@@ -191,7 +191,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
