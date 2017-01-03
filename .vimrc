@@ -124,11 +124,11 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgr
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
 " バッファ一覧
-noremap <C-P> :Unite buffer<CR>
+noremap <C-U><C-B> :Unite buffer<CR>
 " ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
+noremap <C-U><C-F> :Unite -buffer-name=file file<CR>
 " 最近使ったファイルの一覧
-noremap <C-Z> :Unite file_mru<CR>
+noremap <C-U><C-M> :Unite file_mru<CR>
 " sourcesを「今開いているファイルのディレクトリ」とする
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 " ウィンドウを分割して開く
@@ -141,6 +141,11 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+" .ファイルも表示できるようfileに
+call unite#custom#source('buffer', 'matchers', "matcher_default")
+call unite#custom#source('file', 'matchers', "matcher_default")
+call unite#custom#source('file_mru', 'matchers', "matcher_default")
+""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " vim一般設定
