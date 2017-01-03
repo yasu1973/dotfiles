@@ -537,7 +537,7 @@ set ruler
 " 更新されたファイルの自動読み込み
 set autoread
 
-" insert modeでカーソルキーが使えない問題の対処。以下参照。　
+" insert modeでカーソルキーが使えない問題の対処。以下参照。
 " :help vt100-cursor-keys
 " :help xterm-cursor-keys
 set notimeout
