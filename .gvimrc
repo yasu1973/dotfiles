@@ -23,6 +23,7 @@ if has('win32')
     set langmenu=ja_jp.utf-8
     source $VIMRUNTIME/menu.vim
 
+    colorscheme molokai
 elseif has('mac')
 "    set guifont=VL_Gothic:h16
 endif
