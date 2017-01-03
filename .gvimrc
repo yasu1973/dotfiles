@@ -32,11 +32,3 @@ if exists('&imdisableactivate')
     set noimdisableactivate
 endif
 
-" colorscheme
-"colorscheme desert256
-
-syntax enable
-set background=dark
-"colorscheme solarized
-colorscheme molokai
-
