@@ -135,16 +135,16 @@ noremap <C-U><C-M> :Unite file_mru<CR>
 " sourcesを「今開いているファイルのディレクトリ」とする
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
 " ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+"au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
+"au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 " ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+"au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
+"au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
-" .ファイルも表示できるようfileに
+" .ファイルも表示できるように
 call unite#custom#source('buffer', 'matchers', "matcher_default")
 call unite#custom#source('file', 'matchers', "matcher_default")
 call unite#custom#source('file_mru', 'matchers', "matcher_default")
