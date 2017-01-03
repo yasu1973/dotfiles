@@ -91,8 +91,6 @@ NeoBundle 'Shougo/vimproc.vim', {
     \    },
     \ }
 NeoBundle 'Shougo/vimshell.vim'
-" You can specify revision/branch/tag.
-"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 
 " Required:
@@ -109,6 +107,7 @@ NeoBundleCheck
 syntax enable
 set t_Co=256
 "let g:solarized_termcolors=256
+"set background=light
 "colorscheme solarized
 "colorscheme desert256
 "colorscheme desert
