@@ -142,6 +142,11 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
 " 偶数番目のインデントの色
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 
+""""""""""""""""""""""""""""""
+" vim-trailing-whitespaceの設定
+""""""""""""""""""""""""""""""
+" 無視するfiletype
+let g:extra_whitespace_ignored_filetypes = ['unite', 'vimshell', 'vimfiler', 'mail']
 
 """"""""""""""""""""""""""""""
 " Unit.vimの設定
