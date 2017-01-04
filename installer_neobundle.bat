@@ -1,7 +1,6 @@
-rem @echo off
+@echo off
 
 rem bundleディレクトリの生成
-echo "test"
 mkdir %userprofile%\dotfiles\.vim\
 mkdir %userprofile%\dotfiles\.vim\bundle\
 
