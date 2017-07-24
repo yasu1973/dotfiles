@@ -34,6 +34,10 @@ githubの場合はSignIn後、new repository を選択してリポジトリを�
 	$ git push origin master # type username & password
 
 # 他のPCで参照
+neobundleをインストールする。
+
+    $ sh installer_neobundle.sh # if windows use this > installer_neobundle.bat
+
 dotfileリポジトリを取り込む。
 
     $ cd ~/ # if windows use this > cd %HOMEPATH%
