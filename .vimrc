@@ -7,7 +7,7 @@ endif
 let g:vimproc#download_windows_dll=1
 
 " Required:
-set runtimepath^=~/dotfiles/.vim/bundle/neobundle.vim/
+set runtimepath^=~/.vim/bundle/neobundle.vim/
 
 " Required:
 call neobundle#begin(expand('~/dotfiles/.vim/bundle'))
