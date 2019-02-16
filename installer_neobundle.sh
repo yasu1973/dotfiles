@@ -4,18 +4,30 @@
 # https://github.com/shoma2da/neobundle_installer
 
 # Installation directory
+
+VIM_DIR=~/.vim/
+
+# check .vim/ dir
+if [ ! -d "$VIM_DIR" ]; then
+  read -p "$VIM_DIR is not exists. create dir? (y/N): " yn
+  case "$yn" in [yY]*) ;; *) echo "ok. abort install neebundle." ; exit ;; esac
+  mkdir $VIM_DIR
+fi
+
+# check .vim/bundle/ dir
 BUNDLE_DIR=~/.vim/bundle
 INSTALL_DIR="$BUNDLE_DIR/neobundle.vim"
 echo "$INSTALL_DIR"
-if [ -e "$INSTALL_DIR" ]; then
+if [ -d "$INSTALL_DIR" ]; then
   echo "$INSTALL_DIR already exists!"
 fi
 
+# check .config/nvim/ dir
 NVIM_DIR=~/.config/nvim
 NVIM_BUNDLE_DIR="$NVIM_DIR/bundle"
 NVIM_INSTALL_DIR="$NVIM_BUNDLE_DIR/neobundle.vim"
 echo "$NVIM_INSTALL_DIR"
-if [ -e "$NVIM_INSTALL_DIR" ]; then
+if [ -d "$NVIM_INSTALL_DIR" ]; then
   echo "$NVIM_INSTALL_DIR already exists!"
 fi
 
