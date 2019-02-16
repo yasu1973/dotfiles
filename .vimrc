@@ -44,7 +44,9 @@ NeoBundle 'croaker/mustang-vim'
 " jellybeans
 NeoBundle 'nanotech/jellybeans.vim'
 " molokai
-NeoBundle 'tomasr/molokai'
+"NeoBundle 'tomasr/molokai'
+" iceberg
+NeoBundle 'cocopon/iceberg.vim'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
@@ -111,9 +113,12 @@ set t_Co=256
 "colorscheme solarized
 "colorscheme desert256
 "colorscheme desert
-syntax on
 colorscheme molokai
 "let g:molokai_original = 1
+
+colorscheme iceberg
+
+syntax on
 let g:rehash256 = 1
 
 "let g:vim_markdown_initial_foldlevel=1
