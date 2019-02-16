@@ -113,9 +113,8 @@ set t_Co=256
 "colorscheme solarized
 "colorscheme desert256
 "colorscheme desert
-colorscheme molokai
+"colorscheme molokai
 "let g:molokai_original = 1
-
 colorscheme iceberg
 
 syntax on
